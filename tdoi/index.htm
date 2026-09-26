@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html land="en-US">
+	<head>
+
+		<link rel="stylesheet" href="/DemPeoRep.css">
+		
+		<link rel="icon" sizes="any" href="/icons/favicon.ico">
+		<link rel="apple-touch-icon-precomposed" sizes="any" href="/favicon.ico">
+		
+		<title>TDOI</title>
+
+	</head>
+	<body>
+		<h1 id="demo"></h>
+
+		<script>
+			var countDownDate = new Date("Sep 26, 2026 23:59:59").getTime();
+
+			var x = setInterval(function() {
+
+				var now = new Date().getTime();
+
+				var distance = countDownDate - now;
+
+				var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+				var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+				var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+				var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+				
+				var sec = "Seconds";
+				var min = "Minutes";
+				var hr = "Hours";
+				var dy = "Days";
+				var isare = "Are";
+				
+				if (seconds == 1) {
+					sec = "Second";
+				}
+				
+				if (minutes == 1) {
+					min = "Minute";
+				}
+				
+				if (hours == 1) {
+					hr = "Hour";
+				}
+				
+				if (days == 1) {
+					dy = "Day";
+					isare = "Is";
+				}
+				var timeleft = "There " + isare + " " + days + " " + dy + ", " + hours + " " + hr + ", "
+				+ minutes + " " + min + ", & " + seconds + " " + sec + " Left!";
+				
+				var timetitle = days + ":" + hours + ":" + minutes + ":" + seconds
+				
+				document.getElementById("demo").innerHTML = timeleft;
+				
+				document.title = timetitle;
+
+				if (distance < 0) {
+					clearInterval(x);
+					document.getElementById("demo").innerHTML = 
+						`David Parker Rose<br>
+						Is The First Person To Sing<br>
+						The Declaration Of Independence!<br>
+						
+						<audio controls>
+							<source src="TDOI.wav" type="audio/wav">
+							<source src="TDOI.ogg" type="audio/ogg">
+							<source src="TDOI.mp3" type="audio/mpeg">
+							Audio to be posted
+						</audio>`;
+					document.title = "The Declaration Of Independance";
+				}
+			}, 1000);
+		</script>
+		
+	</body>
+</html>
