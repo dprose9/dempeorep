@@ -11,7 +11,7 @@
 
 	</head>
 	<body>
-		<h1 id="demo"></h>
+		<h1 id="demo" style="text-align: center"></h>
 
 		<script>
 			var countDownDate = new Date("Sep 26, 2026 23:59:59").getTime();
@@ -61,10 +61,11 @@
 				if (distance < 0) {
 					clearInterval(x);
 					document.getElementById("demo").innerHTML = 
-						`David Parker Rose<br>
-						Is The First Person To Sing<br>
-						The Declaration Of Independence!<br>
-						
+						`<span style="color:#AA0000; font-size:48px">David Parker Rose</span><br>
+						<span style="font-size:32px">Is The First Person To Sing</span><br>
+						<span style="color:#0000AA; font-size:48px">The Declaration Of Independence!</span>
+						<br>
+						<br>
 						<audio controls>
 							<source src="TDOI.wav" type="audio/wav">
 							<source src="TDOI.ogg" type="audio/ogg">
